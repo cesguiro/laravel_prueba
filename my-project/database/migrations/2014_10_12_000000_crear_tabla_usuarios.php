@@ -17,6 +17,7 @@ class CrearTablaUsuarios extends Migration
             $table->id();
             $table->string('login')->unique();
             $table->string('password');
+            $table->string('api_token', 60)->unique()->nullable();
             $table->timestamps();
         });
     }

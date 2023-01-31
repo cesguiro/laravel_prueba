@@ -14,6 +14,15 @@ class UsuariosSeeder extends Seeder
      */
     public function run()
     {
-        Usuario::factory()->count(3)->create();
+        //Usuario::factory()->count(3)->create();
+        $usuario = new Usuario();
+        $usuario->login = 'admin';
+        $usuario->password = bcrypt('admin');
+        $usuario->save();
+
+        $usuario = new Usuario();
+        $usuario->login = 'user';
+        $usuario->password = bcrypt('user');
+        $usuario->save();
     }
 }
