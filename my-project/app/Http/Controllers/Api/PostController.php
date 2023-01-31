@@ -34,6 +34,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+        var_dump($request->user());
         $post = new Post();
         $post->titulo = $request->titulo;
         $post->contenido = $request->contenido;
